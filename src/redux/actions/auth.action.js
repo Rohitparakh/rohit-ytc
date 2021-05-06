@@ -18,7 +18,9 @@ export const login = () => async dispatch => {
       const provider = new firebase.auth.GoogleAuthProvider()
       provider.addScope('https://www.googleapis.com/auth/youtube.force-ssl')
 
-      const res = await auth.signInWithPopup(provider)
+      const res = await auth.signInWithPopup(provider).catch(function(error) {
+         alert(error.message,7000);
+       }); 
       // const res = await auth.signInWithRedirect(provider)
       const accessToken = res.credential.accessToken
 
