@@ -19,6 +19,7 @@ export const login = () => async dispatch => {
       provider.addScope('https://www.googleapis.com/auth/youtube.force-ssl')
 
       const res = await auth.signInWithPopup(provider)
+      // const res = await auth.signInWithRedirect(provider)
       const accessToken = res.credential.accessToken
 
       const profile = {

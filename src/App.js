@@ -37,9 +37,10 @@ const Layout = ({ children }) => {
 }
 
 const App = () => {
-   const { accessToken, loading } = useSelector(state => state.auth)
+   var { accessToken, loading } = useSelector(state => state.auth)
 
    const history = useHistory()
+
 
    useEffect(() => {
       if (!loading && !accessToken) {
